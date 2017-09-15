@@ -44,6 +44,7 @@ public class Cinematica extends ApplicationAdapter {
     private Buscar buscar;
     private Vagar vagar;
     private Fugir fugir;
+    private Chegar chegar;
     private AlgoritmoMovimentacao algoritmoCorrente;
     private Array<AlgoritmoMovimentacao> algoritmos;
     private String stringAlgoritmoCorrente;
