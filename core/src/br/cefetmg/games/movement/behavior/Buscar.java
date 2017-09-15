@@ -1,6 +1,7 @@
 package br.cefetmg.games.movement.behavior;
 
 import br.cefetmg.games.movement.AlgoritmoMovimentacao;
+import br.cefetmg.games.movement.Alvo;
 import br.cefetmg.games.movement.Direcionamento;
 import br.cefetmg.games.movement.Pose;
 import com.badlogic.gdx.Input.Keys;
@@ -33,6 +34,13 @@ public class Buscar extends AlgoritmoMovimentacao {
         // super.alvo já contém a posição do alvo
         // agente (parâmetro) é a pose do agente que estamos guiando
         // ...
+        output.velocidade = super.alvo.getObjetivo().sub(agente.posicao);
+        output.velocidade.nor();
+        output.velocidade.scl(maxVelocidade);
+                
+        agente.olharNaDirecaoDaVelocidade(output.velocidade);
+        output.rotacao=0;
+        
         return output;
     }
 
